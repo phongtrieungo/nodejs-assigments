@@ -1,8 +1,15 @@
 import express from 'express';
 
+import addTodoRoute from './route/add-todo.route';
+import homeRoute from './route/home.route';
+
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('<h1>Hello World</h1><br><h2>I am here to servce you</h2><br><h3>Your request will be updated here</h3>'));
+app.set('views',  __dirname + '/view');
+app.set('view engine', 'pug');
+
+app.use('/add', addTodoRoute);
+app.use('/', homeRoute);
 
 app.listen(port, () => console.log(`The example is running on port ${port}`));
