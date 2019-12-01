@@ -1,14 +1,9 @@
-.container {
-    display: flex;
-    flex-direction: column;
+.pointer {
+    cursor: pointer;
+    opacity: 0.6;
 }
 
-.todo-input {
-    display: flex;
-    justify-content: center;
-}
-
-.todo-list {
-    display: flex;
-    justify-content: center;
+.pointer:hover {
+    cursor: pointer;
+    opacity: 1;
 }

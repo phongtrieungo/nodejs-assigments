@@ -1,23 +1,31 @@
 doctype html
 html
     head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
         style
             include home.css
     body
-    .container
-        .todo-input
-            input(type="text")
-            button(type="button") Add
-        .todo-list
-            table
-                thead
-                tr
-                    th  Name 
-                    th  Email 
-                tbody
-                tr
-                    td  User1 
-                    td  user1@gmail.com  
-                tr
-                    td  User2
-                    td  user2@gmail.com 
+    section.container-fluid
+        section.display-3.mb-2.text-center Todo App
+        form(action="addNewTodoItem", method="post").text-center
+            form.form-group
+                div.row
+                    div.col-11
+                        input(type="text", name="todoContent").form-control
+                    div.col-1
+                        button.btn.btn-primary Add
+                
+        ul.list-group.mt-5
+            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
+                span.d-flex.justify-content-between
+                    i.fa.fa-edit.pointer
+                    i.fa.fa-trash.pointer.ml-3
+            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
+                span.d-flex.justify-content-between
+                    i.fa.fa-edit.pointer
+                    i.fa.fa-trash.pointer.ml-3
+            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
+                span.d-flex.justify-content-between
+                    i.fa.fa-edit.pointer
+                    i.fa.fa-trash.pointer.ml-3
