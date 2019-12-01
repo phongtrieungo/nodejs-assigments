@@ -1,18 +1,20 @@
 doctype html
 html
     head
+        title Todo App
+        link(rel="icon", href="/images/favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
         link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
         style
             include home.css
     body
-    section.container-fluid
+    section.container
         section.display-3.mb-2.text-center Todo App
-        form(action="addNewTodoItem", method="post").text-center
+        form(action="/add", method="post").text-center
             form.form-group
                 div.row
                     div.col-11
-                        input(type="text", name="todoContent").form-control
+                        input(type="text", name="content").form-control
                     div.col-1
                         button.btn.btn-primary Add
                 
