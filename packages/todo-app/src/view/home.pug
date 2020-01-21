@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title Todo App
+        title Remember App
         link(rel="icon", href="/images/favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
         link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
@@ -9,25 +9,25 @@ html
             include home.css
     body
     section.container
-        section.display-3.mb-2.text-center Todo App
+        section.display-3.mb-2.text-center Remember App
         form(action="/add", method="post").text-center
-            form.form-group
+            div.form-group
                 div.row
                     div.col-11
                         input(type="text", name="content").form-control
                     div.col-1
                         button.btn.btn-primary Add
-                
+        if isEmptyContent
+            div.row
+                div.col-12 
+                    p.alert.alert-danger.mt-2 Empty todo content
         ul.list-group.mt-5
-            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
-                span.d-flex.justify-content-between
-                    i.fa.fa-edit.pointer
-                    i.fa.fa-trash.pointer.ml-3
-            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
-                span.d-flex.justify-content-between
-                    i.fa.fa-edit.pointer
-                    i.fa.fa-trash.pointer.ml-3
-            li.list-group-item.d-flex.justify-content-between.align-item-center Making bake
-                span.d-flex.justify-content-between
-                    i.fa.fa-edit.pointer
-                    i.fa.fa-trash.pointer.ml-3
+            each val in items
+                li.list-group-item.d-flex.justify-content-between.align-item-center #{val.content}
+                    span.d-flex.justify-content-between
+                        form(action='/edit', method='post')
+                            button.btn.btn-info(type="submit")
+                                i.fa.fa-edit
+                        form(action='/delete/#{val.content}', method='post')
+                            button.btn.btn-secondary(type="submit").ml-3
+                                i.fa.fa-trash

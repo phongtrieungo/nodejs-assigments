@@ -4,9 +4,10 @@ import todoList from '../models/todo.model';
 const router = Router();
 
 router.get('/', (req, res) => {
-  console.log(todoList.getAll());
+  const items = todoList.getAll();
+  const isEmptyContent = todoList.getContentState();
   
-  res.render('../view/home');
+  res.render('../view/home', { items,  isEmptyContent});
 });
 
 export default router;

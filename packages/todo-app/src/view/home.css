@@ -1,9 +1,0 @@
-.pointer {
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.pointer:hover {
-    cursor: pointer;
-    opacity: 1;
-}

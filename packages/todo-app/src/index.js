@@ -4,6 +4,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 
 import addTodoRoute from './route/add-todo.route';
+import deleteTodoRoute from './route/delete-todo.route';
 import homeRoute from './route/home.route';
 import NotFoundRoute from './route/404.route';
 
@@ -16,6 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views',  __dirname + '/view');
 app.set('view engine', 'pug');
 
+app.use(deleteTodoRoute);
 app.use(addTodoRoute);
 app.use(homeRoute);
 app.use(NotFoundRoute);

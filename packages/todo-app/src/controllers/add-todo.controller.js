@@ -1,9 +1,14 @@
 import Todo from '../models/todo.model';
 
 export default (req, res) => {
-    console.log(req.body);
     const content = req.body.content;
-    const todo = new Todo(content);
-    todo.save();
-    res.redirect('/');
+    if (content) {
+        const todo = new Todo(content);
+        Todo.isEmptyContent(false);
+        todo.save();
+        res.redirect('/');        
+    } else {
+        Todo.isEmptyContent(true);
+        res.redirect('/');
+    }
 }

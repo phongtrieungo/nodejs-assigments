@@ -1,4 +1,5 @@
 const todoItems = [];
+let isEmpty = false;
 
 export default class Todo {
     constructor(content) {
@@ -9,7 +10,19 @@ export default class Todo {
         todoItems.push(this);
     }
 
+    static remove(content) {
+        todoItems = todoItems.filter(item => item !== content);
+    }
+
     static getAll() {
         return todoItems;
+    }
+
+    static isEmptyContent(empty) {
+        isEmpty = empty;
+    }
+
+    static getContentState() {
+        return isEmpty;
     }
 }
