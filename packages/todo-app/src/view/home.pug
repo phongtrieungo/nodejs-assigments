@@ -25,9 +25,7 @@ html
             each val in items
                 li.list-group-item.d-flex.justify-content-between.align-item-center #{val.content}
                     span.d-flex.justify-content-between
-                        form(action='/edit', method='post')
-                            button.btn.btn-info(type="submit")
-                                i.fa.fa-edit
-                        form(action='/delete/#{val.content}', method='post')
-                            button.btn.btn-secondary(type="submit").ml-3
-                                i.fa.fa-trash
+                        a(href=`/edit/${val.content}`).btn.btn-info
+                            i.fa.fa-edit
+                        a(href=`/delete/${val.content}`).btn.btn-secondary.ml-3
+                            i.fa.fa-trash

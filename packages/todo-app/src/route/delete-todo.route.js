@@ -3,6 +3,6 @@ import controller from '../controllers/delete-todo.controller'
 
 const router = Router();
 
-router.post('/delete/:id', controller);
+router.get('/delete/:id', controller);
 
 export default router;

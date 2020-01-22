@@ -1,4 +1,4 @@
-const todoItems = [];
+let todoItems = [];
 let isEmpty = false;
 
 export default class Todo {
@@ -11,7 +11,7 @@ export default class Todo {
     }
 
     static remove(content) {
-        todoItems = todoItems.filter(item => item !== content);
+        todoItems = todoItems.filter(item => item.content !== content);
     }
 
     static getAll() {
