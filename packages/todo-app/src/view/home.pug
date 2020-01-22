@@ -10,22 +10,27 @@ html
     body
     section.container
         section.display-3.mb-2.text-center Remember App
-        form(action="/add", method="post").text-center
+        form(action="/add", method="POST").text-center
             div.form-group
                 div.row
                     div.col-11
-                        input(type="text", name="content").form-control
+                        input(type="text", name="content").form-control.required
                     div.col-1
                         button.btn.btn-primary Add
-        if isEmptyContent
+        if !hasContent
             div.row
                 div.col-12 
-                    p.alert.alert-danger.mt-2 Empty todo content
+                    p.alert.alert-info.mt-2 Empty List
         ul.list-group.mt-5
             each val in items
-                li.list-group-item.d-flex.justify-content-between.align-item-center #{val.content}
-                    span.d-flex.justify-content-between
-                        a(href=`/edit/${val.content}`).btn.btn-info
-                            i.fa.fa-edit
-                        a(href=`/delete/${val.content}`).btn.btn-secondary.ml-3
-                            i.fa.fa-trash
+                li.list-group-item
+                    form(action=`/update/${val.content}`, method="POST")
+                        div.row
+                            div.col-9
+                                input(type="text", name="itemContent", value=`${val.content}`).form-control
+                            div.col-3
+                                span.d-flex.justify-content-end
+                                    button(type="submit").btn.btn-info
+                                        i.fa.fa-edit
+                                    a(href=`/delete/${val.content}`).btn.btn-secondary.ml-3
+                                        i.fa.fa-trash

@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 
 import addTodoRoute from './route/add-todo.route';
 import deleteTodoRoute from './route/delete-todo.route';
+import updateTodoRoute from './route/update-todo.route';
 import homeRoute from './route/home.route';
 import NotFoundRoute from './route/404.route';
 
@@ -18,6 +19,7 @@ app.set('views',  __dirname + '/view');
 app.set('view engine', 'pug');
 
 app.use(deleteTodoRoute);
+app.use(updateTodoRoute)
 app.use(addTodoRoute);
 app.use(homeRoute);
 app.use(NotFoundRoute);

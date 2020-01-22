@@ -1,5 +1,4 @@
 let todoItems = [];
-let isEmpty = false;
 
 export default class Todo {
     constructor(content) {
@@ -14,15 +13,16 @@ export default class Todo {
         todoItems = todoItems.filter(item => item.content !== content);
     }
 
+    static update(oldContent, newContent) {
+        todoItems = todoItems.map(item => {
+            if (item.content === oldContent) {
+                return {...item, content: newContent};
+            }
+            return {...item};
+        })
+    }
+
     static getAll() {
         return todoItems;
-    }
-
-    static isEmptyContent(empty) {
-        isEmpty = empty;
-    }
-
-    static getContentState() {
-        return isEmpty;
     }
 }

@@ -7,6 +7,6 @@
 2. [X] Remove selected todo item
     1. [X] When user clicks delete button, the respective todo item will be removed
     2. [X] The todo list will be reloaded
-3. [ ] Edit selected todo item
-    1. [ ] When user clicks edit button, the respective todo item will be enabled edit mode which a new layout will be displayed
-    2. [ ] When user finished editting, the user click ok button to terminate edit mode and the newest list will be displayed
+3. [X] Edit selected todo item
+    1. [X] When user clicks edit button, the respective todo item will be enabled edit mode which a new layout will be displayed
+    2. [X] When user finished editting, the user click ok button to terminate edit mode and the newest list will be displayed
