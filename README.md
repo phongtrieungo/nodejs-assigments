@@ -24,3 +24,22 @@ A simple web application will allow users to take notes.
 #### Design Patter
 
 Model View Controller (MVC)
+
+### 2. GameInsight
+
+A more complex web app for selling video games and console machines
+
+#### Features
+
+- Display games and console machines
+- Display item detail
+- Allow to add to cart
+- Allow to checkout
+
+#### Framework
+
+- [ExpressJS](https://expressjs.com/)
+
+#### Design Patter
+
+Model View Controller (MVC)
